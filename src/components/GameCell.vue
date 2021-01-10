@@ -1,12 +1,12 @@
 <template>
   <div id="game-cell">
-    <button>{{ cell }}</button>
+    <button>{{ playerCell }}</button>
   </div>
 </template>
 
 <script>
 export default {
-  props: { cell: Number },
+  props: { cell: Number, playerCell: Number },
 };
 </script>
 

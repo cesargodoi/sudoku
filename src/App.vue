@@ -1,7 +1,7 @@
 <template>
   <div id="game">
     <h1>Sudoku</h1>
-    <game-board :game="game" />
+    <game-board :game="game" :playerGame="playerGame" />
     <game-keyboard @setNumber="setNumber" />
   </div>
 </template>
@@ -21,11 +21,24 @@ const mockeGame = [
   [1, 7, 9, 2, 8, 3, 5, 4, 6],
 ];
 
+const emptyGame = [
+  [0, 0, 0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0, 0, 0],
+];
+
 export default {
   name: "App",
   data() {
     return {
       game: mockeGame,
+      playerGame: emptyGame,
       selectedNumber: null,
     };
   },
