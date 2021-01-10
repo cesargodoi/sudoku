@@ -1,9 +1,23 @@
 <template>
-  <div id="game-board"></div>
+  <div id="game-board">
+    <game-line />
+    <game-line />
+    <game-line />
+    <game-line />
+    <game-line />
+    <game-line />
+    <game-line />
+    <game-line />
+    <game-line />
+  </div>
 </template>
 
 <script>
-export default {};
+import GameLine from "./GameLine.vue";
+
+export default {
+  components: { GameLine },
+};
 </script>
 
 <style scoped>
