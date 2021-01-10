@@ -1,7 +1,12 @@
 <template>
   <div id="game">
     <h1>Sudoku</h1>
-    <game-board :game="game" :playerGame="playerGame" />
+    <game-board
+      :game="game"
+      :playerGame="playerGame"
+      :selectedNumber="selectedNumber"
+      @confirmedNumber="confirmedNumber"
+    />
     <game-keyboard @setNumber="setNumber" />
   </div>
 </template>
@@ -45,6 +50,9 @@ export default {
   methods: {
     setNumber(num) {
       this.selectedNumber = num;
+    },
+    confirmedNumber(list, pos, num) {
+      this.playerGame[list][pos] = num;
     },
   },
 };

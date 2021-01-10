@@ -1,16 +1,24 @@
 <template>
   <div id="game-cell">
-    <button :style="showNumber">{{ playerCell }}</button>
+    <button :style="showNumber" @click="checkEquals">{{ playerCell }}</button>
   </div>
 </template>
 
 <script>
 export default {
-  props: { cell: Number, playerCell: Number },
+  props: { cell: Number, playerCell: Number, selectedNumber: Number },
   computed: {
     showNumber() {
       return { color: this.playerCell !== 0 ? "#1f412d" : "#dfc8a9" };
     },
+  },
+  methods: {
+    checkEquals() {
+      if (this.cell === this.selectedNumber) {
+        this.$emit("confirmedNumber", this.selectedNumber);
+      }
+    },
+    emits: ["confirmedNumber"],
   },
 };
 </script>
