@@ -1,19 +1,23 @@
 <template>
   <div id="game-line">
-    <div>1</div>
-    <div>2</div>
-    <div>3</div>
-    <div>4</div>
-    <div>5</div>
-    <div>6</div>
-    <div>7</div>
-    <div>8</div>
-    <div>9</div>
+    <game-cell :cell="line[0]" />
+    <game-cell :cell="line[1]" />
+    <game-cell :cell="line[2]" />
+    <game-cell :cell="line[3]" />
+    <game-cell :cell="line[4]" />
+    <game-cell :cell="line[5]" />
+    <game-cell :cell="line[6]" />
+    <game-cell :cell="line[7]" />
+    <game-cell :cell="line[8]" />
   </div>
 </template>
 
 <script>
-export default {};
+import GameCell from "./GameCell.vue";
+export default {
+  components: { GameCell },
+  props: { line: Array },
+};
 </script>
 
 <style scoped>
