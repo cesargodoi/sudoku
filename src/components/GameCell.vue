@@ -1,12 +1,17 @@
 <template>
   <div id="game-cell">
-    <button>{{ playerCell }}</button>
+    <button :style="showNumber">{{ playerCell }}</button>
   </div>
 </template>
 
 <script>
 export default {
   props: { cell: Number, playerCell: Number },
+  computed: {
+    showNumber() {
+      return { color: this.playerCell !== 0 ? "#1f412d" : "#dfc8a9" };
+    },
+  },
 };
 </script>
 
