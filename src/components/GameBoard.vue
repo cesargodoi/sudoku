@@ -1,66 +1,66 @@
 <template>
   <div id="game-board">
     <game-line
-      index="0"
+      list="0"
       :line="game[0]"
       :playerLine="playerGame[0]"
-      :selectedNumber="selectedNumber"
+      :keyboardNumber="keyboardNumber"
       @confirmedNumber="confirmedNumber"
     />
     <game-line
-      index="1"
+      list="1"
       :line="game[1]"
       :playerLine="playerGame[1]"
-      :selectedNumber="selectedNumber"
+      :keyboardNumber="keyboardNumber"
       @confirmedNumber="confirmedNumber"
     />
     <game-line
-      index="2"
+      list="2"
       :line="game[2]"
       :playerLine="playerGame[2]"
-      :selectedNumber="selectedNumber"
+      :keyboardNumber="keyboardNumber"
       @confirmedNumber="confirmedNumber"
     />
     <game-line
-      index="3"
+      list="3"
       :line="game[3]"
       :playerLine="playerGame[3]"
-      :selectedNumber="selectedNumber"
+      :keyboardNumber="keyboardNumber"
       @confirmedNumber="confirmedNumber"
     />
     <game-line
-      index="4"
+      list="4"
       :line="game[4]"
       :playerLine="playerGame[4]"
-      :selectedNumber="selectedNumber"
+      :keyboardNumber="keyboardNumber"
       @confirmedNumber="confirmedNumber"
     />
     <game-line
-      index="5"
+      list="5"
       :line="game[5]"
       :playerLine="playerGame[5]"
-      :selectedNumber="selectedNumber"
+      :keyboardNumber="keyboardNumber"
       @confirmedNumber="confirmedNumber"
     />
     <game-line
-      index="6"
+      list="6"
       :line="game[6]"
       :playerLine="playerGame[6]"
-      :selectedNumber="selectedNumber"
+      :keyboardNumber="keyboardNumber"
       @confirmedNumber="confirmedNumber"
     />
     <game-line
-      index="7"
+      list="7"
       :line="game[7]"
       :playerLine="playerGame[7]"
-      :selectedNumber="selectedNumber"
+      :keyboardNumber="keyboardNumber"
       @confirmedNumber="confirmedNumber"
     />
     <game-line
-      index="8"
+      list="8"
       :line="game[8]"
       :playerLine="playerGame[8]"
-      :selectedNumber="selectedNumber"
+      :keyboardNumber="keyboardNumber"
       @confirmedNumber="confirmedNumber"
     />
   </div>
@@ -71,7 +71,7 @@ import GameLine from "./GameLine.vue";
 
 export default {
   components: { GameLine },
-  props: { game: Array, playerGame: Array, selectedNumber: Number },
+  props: { game: Array, playerGame: Array, keyboardNumber: Number },
   methods: {
     confirmedNumber(list, pos, num) {
       this.$emit("confirmedNumber", list, pos, num);

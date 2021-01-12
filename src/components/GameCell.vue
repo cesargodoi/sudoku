@@ -6,7 +6,7 @@
 
 <script>
 export default {
-  props: { cell: Number, playerCell: Number, selectedNumber: Number },
+  props: { cell: Number, playerCell: Number, keyboardNumber: Number },
   computed: {
     showNumber() {
       return { color: this.playerCell !== 0 ? "#1f412d" : "#dfc8a9" };
@@ -14,11 +14,11 @@ export default {
   },
   methods: {
     checkEquals() {
-      if (this.cell === this.selectedNumber) {
-        this.$emit("confirmedNumber", this.selectedNumber);
+      if (this.cell === this.keyboardNumber) {
+        this.$emit("getPosition", this.keyboardNumber);
       }
     },
-    emits: ["confirmedNumber"],
+    emits: ["getPosition"],
   },
 };
 </script>
